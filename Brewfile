@@ -5,3 +5,4 @@ brew "neovim", args: ["HEAD"]
 brew "stow"
 brew "gnupg"
 brew "pinentry"
+brew "deno"

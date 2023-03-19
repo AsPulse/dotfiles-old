@@ -14,6 +14,9 @@ brew bundle
 
 stow -R -v -d ./ -t ~ zsh
 
+mkdir -p ~/.config/nvim
+stow -R -v -d ./ -t ~/.config/nvim neovim
+
 curl https://get.volta.sh | bash
 
 
