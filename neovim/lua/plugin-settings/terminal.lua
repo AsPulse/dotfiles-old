@@ -9,7 +9,7 @@ local _terminal_lazygit_cwd = nil
 local function _terminal_worker_ready()
   if _terminal_worker == nil then
     _terminal_worker = require('toggleterm.terminal').Terminal:new({
-      cmd = 'pwsh',
+      cmd = 'zsh',
       dir = vim.fn.getcwd(),
       direction = 'float',
       hidden = true,
@@ -56,7 +56,7 @@ end
 local function _terminal_server_open()
   if _terminal_server == nil then
     _terminal_server = require('toggleterm.terminal').Terminal:new({
-      cmd = 'pwsh',
+      cmd = 'zsh',
       dir = vim.fn.getcwd(),
       direction = 'float',
       hidden = true,
