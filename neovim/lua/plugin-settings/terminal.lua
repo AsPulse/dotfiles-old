@@ -42,7 +42,7 @@ local function _terminal_lazygit_open()
   })
 
   _terminal_lazygit:open()
-  _terminal_lazygit:send('lazygit')
+  _terminal_lazygit:send('lazygit && exit')
 
 end
 
