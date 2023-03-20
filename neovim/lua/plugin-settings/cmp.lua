@@ -60,7 +60,7 @@ return {
         }),
         window = {
           completion = cmp.config.window.bordered({
-            winhighlight = 'Normal:CmpFloating,FloatBorder:None,Search:None',
+            winhighlight = 'Normal:CmpFloating,FloatBorder:None,CursorLine:CmpFloatingCursor,Search:None',
             col_offset = -3
           }),
           documentation = cmp.config.window.bordered({

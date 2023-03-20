@@ -12,8 +12,8 @@ function Material_colortheme_customMap()
   vim.api.nvim_set_hl(0, 'Folded', { bg='none' })
   vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg='none' })
 
-  vim.api.nvim_set_hl(0, 'Pmenu', { bg='None' })
-  vim.api.nvim_set_hl(0, 'PmenuSel', { bg='None' })
+  vim.api.nvim_set_hl(0, 'CmpFloating', { bg='#2b2541' })
+  vim.api.nvim_set_hl(0, 'CmpFloatingCursor', { bg='#434267' })
   vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchDefault', { bold=true })
 
   vim.api.nvim_set_hl(0, 'CmpItemKindText', { fg='#676e95', bold=true })
