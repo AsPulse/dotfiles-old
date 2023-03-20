@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 brew "gh"
+brew "wget"
 brew "lazygit"
 brew "neovim", args: ["HEAD"]
 brew "stow"
