@@ -1,0 +1,135 @@
+/** Disable Favicon White Grow */
+.theme-dark .tab-position .tab.active .tab-header .favicon {
+  filter: none !important;
+}
+
+/** Tab Positions */
+#browser #tabs-tabbar-container {
+  height: inherit !important;
+}
+
+#browser :is(#tabs-container, #tabs-subcontainer) {
+  min-height: inherit;
+  height: auto;
+}
+
+#browser #tabs-container div.resize > div {
+  padding-bottom: .3rem;
+  overflow-y: visible;
+}
+#browser #tabs-subcontainer > div {
+  padding: .3rem 0;
+}
+
+
+#browser div.tab-strip {
+  display: inline-flex;
+  width: auto;
+}
+
+#browser .tab-position:has(.tab:not(.pinned)) {
+  max-width: inherit;
+  max-height: inherit;
+  height: inherit;
+  padding: 0 .3rem 0 .3rem;
+}
+
+#browser .tab-position:has(.tab.pinned) {
+  max-width: inherit;
+  max-height: inherit;
+  height: inherit;
+  padding: 0;
+}
+
+/** Gradation (Tab) */
+#browser #tabs-tabbar-container {
+  background: rgb(4,8,39);
+  background: linear-gradient(158deg, #040827 0%, #19050f 100%);
+}
+
+#browser #tabs-subcontainer {
+  background-color: rgba(255 255 255 / 10%);
+}
+
+#browser .tab {
+  transition: .2s ease-out background-color;
+  background-color: rgba(255 255 255 / 5%);
+  
+  backdrop-filter: blur(5px);
+}
+
+#browser .tab.active {
+  background-color: rgba(255 255 255 / 20%) !important;
+}
+
+
+#browser .tab:hover {
+  background-color: rgba(255 255 255 / 30%);
+}
+
+
+/** Gradation (workspace) */
+#browser :is(.tabbar-workspace-button) {
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: rgba(255 255 255 / 5%);
+  transition: .2s ease-out background-color;
+}
+
+#browser :is(.tabbar-workspace-button):hover {
+  background-color: rgba(255 255 255 / 20%);
+}
+
+#browser .tabbar-workspace-button > button {
+  background-color: transparent;
+}
+
+#browser .button-popup:has(div.WorkspacePopup)  {
+  background: rgba(40 36 42 / 80%);
+  backdrop-filter: blur(5px);
+}
+#browser .button-popup:has(div.WorkspacePopup) > * {
+  background-color: transparent;
+}
+
+#browser .button-popup:has(div.WorkspacePopup) button:is(.workspace-item-wrapper, .this-window) {
+  background-color: rgba(255 255 255 / 5%);
+  cursor: pointer;
+  transition: .3s cubic-bezier(0, 1, 0.5, 1) background-color;
+}
+
+#browser .button-popup:has(div.WorkspacePopup) button:is(.workspace-item-wrapper, .this-window):hover {
+  background-color: rgba(255 255 255 / 15%);  
+}
+
+/** Tab Stack */
+.svg-tab-stack { display: none; }
+#browser .tab-position.is-substack > div {
+  border-bottom: 2px solid #70acff;
+  margin-bottom: -2px;
+}
+
+#browser .tab:not(.active) span.title {
+  opacity: 0.7;
+}
+#browser .tab.active span.title {
+  color: white;
+}
+
+/** Tab Scale */
+#browser .tab.active {
+  transition: .4s cubic-bezier(0,.8,.2,1) all;
+  transform: scale(1.05);
+}
+
+/**Popup */
+#browser.popup :is(#tabs-tabbar-container, #main .bookmark-bar, #panels-container, div.mainbar .toolbar > *:not(.UrlBar-AddressField)) {
+  display: none;
+}
+
+/** Tab Progressbar */
+#browser .UrlBar-AddressField .pageload .pageload-indicator {
+  background-color: white;
+}
+
+

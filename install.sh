@@ -11,12 +11,12 @@ if [ ! -f /usr/local/bin/brew ]
 fi
 
 brew bundle
+curl https://get.volta.sh | bash
 
 stow -R -v -d ./ -t ~ zsh
 
 mkdir -p ~/.config/nvim
 stow -R -v -d ./ -t ~/.config/nvim neovim
 
-curl https://get.volta.sh | bash
-
-
+mkdir -p ~/.vivaldi
+stow -R -v -d ./ -t ~/.vivaldi vivaldi
