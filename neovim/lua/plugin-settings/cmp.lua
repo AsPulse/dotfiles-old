@@ -134,7 +134,7 @@ return {
                 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
                   buffer = bufnr,
                   callback = function()
-                    vim.lsp.buf.format({ timeout_ms = 20000 })
+                    vim.cmd([[EslintFixAll]])
                   end
                 })
               end,
