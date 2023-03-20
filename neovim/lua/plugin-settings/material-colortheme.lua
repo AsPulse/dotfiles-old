@@ -1,35 +1,36 @@
 function Material_colortheme_customMap()
-  vim.cmd [[highlight @field guifg=#a6accd]]
-  vim.cmd [[highlight @property guifg=#ffcd6b]]
-  vim.cmd [[highlight ModeMsg guifg=#303030]]
+  vim.api.nvim_set_hl(0, '@field', { fg='#a6accd' })
+  vim.api.nvim_set_hl(0, '@property', { fg='#ffcd6b' })
+  vim.api.nvim_set_hl(0, 'ModeMsg', { fg='#303030' })
 
-  vim.cmd [[highlight Normal guibg=none]]
-  vim.cmd [[highlight NormalFloat guibg=none]]
-  vim.cmd [[highlight FloatBorder guibg=none]]
-  vim.cmd [[highlight NormalNC guibg=none]]
-  vim.cmd [[highlight NonText guibg=none]]
-  vim.cmd [[highlight LineNr guibg=none]]
-  vim.cmd [[highlight Folded guibg=none]]
-  vim.cmd [[highlight EndOfBuffer guibg=none]]
+  vim.api.nvim_set_hl(0, 'Normal', { bg='none' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg='none' })
+  vim.api.nvim_set_hl(0, 'FloatBorder', { bg='none' })
+  vim.api.nvim_set_hl(0, 'NormalNC', { bg='none' })
+  vim.api.nvim_set_hl(0, 'NonText', { bg='none' })
+  vim.api.nvim_set_hl(0, 'LineNr', { bg='none' })
+  vim.api.nvim_set_hl(0, 'Folded', { bg='none' })
+  vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg='none' })
 
-  vim.cmd [[highlight CmpFloating guifg=#8b90a6 guibg=#2d2d3f]]
-  vim.cmd [[highlight CmpItemAbbrMatchDefault gui=bold]]
+  vim.api.nvim_set_hl(0, 'Pmenu', { bg='None' })
+  vim.api.nvim_set_hl(0, 'PmenuSel', { bg='None' })
+  vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchDefault', { bold=true })
 
-  vim.cmd [[highlight CmpItemKindText guifg=#676e95 gui=bold]]
-  vim.cmd [[highlight CmpItemKindInterface guifg=#ffcb3b gui=bold]]
+  vim.api.nvim_set_hl(0, 'CmpItemKindText', { fg='#676e95', bold=true })
+  vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { fg='#ffcb3b', bold=true })
 
-  vim.cmd [[highlight CmpItemKindFunction guifg=#c792ea gui=bold]]
-  vim.cmd [[highlight! link CmpItemKindMethod CmpItemKindFunction]]
+  vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { fg='#c792ea', bold=true })
+  vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { fg='#c792ea', bold=true })
 
-  vim.cmd [[highlight CmpItemKindVariable guifg=#89ddff gui=bold]]
-  vim.cmd [[highlight! link CmpItemKindField CmpItemKindVariable ]]
+  vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { fg='#89ddff', bold=true })
+  vim.api.nvim_set_hl(0, 'CmpItemKindField', { fg='#89ddff', bold=true })
 
-  vim.cmd [[highlight CmpItemKindKeyword guifg=#80cbc4 gui=bold]]
-  vim.cmd [[highlight CmpItemKindSnippet guifg=#ff5370 gui=bold]]
+  vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { fg='#80cbc4', bold=true })
+  vim.api.nvim_set_hl(0, 'CmpItemKindSnippet', { fg='#ff5370', bold=true })
 
-  vim.cmd [[highlight TreesitterContext guibg=#665e8f]]
+  vim.api.nvim_set_hl(0, 'TreesitterContext', { bg='#665e8f' })
 
-  vim.cmd [[highlight BufferLineFill guibg=none]]
+  vim.api.nvim_set_hl(0, 'BufferLineFill', { bg='none' })
 end
 
 return {
