@@ -20,3 +20,7 @@ stow -R -v -d ./ -t ~/.config/nvim neovim
 
 mkdir -p ~/.vivaldi
 stow -R -v -d ./ -t ~/.vivaldi vivaldi
+
+mkdir -p ~/.vim
+mkdir -p ~/.vim/tsnip
+stow -R -v -d ./ -t ~/.vim/tsnip tsnip
