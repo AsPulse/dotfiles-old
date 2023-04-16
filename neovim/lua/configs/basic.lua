@@ -22,4 +22,6 @@ set('wildmode', 'list:longest')
 
 set('pumblend', 10)
 
+vim.o.guifont = 'FiraCode Nerd Font Mono:h14'
+vim.g.mapleader = ' '
 return nil;

@@ -13,9 +13,11 @@ fi
 brew bundle
 curl https://get.volta.sh | bash
 
-stow -R -v -d ./ -t ~ zsh
+stow -R -v -d ./ -t ~ zsh alacritty
 
+mkdir -p ~/.config
 mkdir -p ~/.config/nvim
+stow -R -v -d ./ -t ~/.config starship
 stow -R -v -d ./ -t ~/.config/nvim neovim
 
 mkdir -p ~/.vivaldi
