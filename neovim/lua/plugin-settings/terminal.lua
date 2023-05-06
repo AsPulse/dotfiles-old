@@ -79,8 +79,8 @@ return {
       vim.keymap.set('n', '<leader>git', _terminal_lazygit_open, { noremap = true, silent = true })
       vim.keymap.set('n', '<leader>termw', _terminal_worker_open, { noremap = true, silent = true })
       vim.keymap.set('n', '<leader>terms', _terminal_server_open, { noremap = true, silent = true })
-      vim.keymap.set('t', '<leader>n', '<C-\\><C-n>', { noremap = true, silent = true })
-      vim.keymap.set({ 'n', 't' }, '<leader>q', _terminal_close, { noremap = true, silent = true })
+      vim.keymap.set('t', '\\n', '<C-\\><C-n>', { noremap = true, silent = true })
+      vim.keymap.set({ 'n', 't' }, '\\q', _terminal_close, { noremap = true, silent = true })
     end,
     config = function()
       require('toggleterm').setup({
