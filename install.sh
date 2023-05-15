@@ -30,4 +30,11 @@ if unlink ~/Library/Application\ Support/AquaSKK; then
 else
   echo "AquaSKK not linked. linking..."
 fi
+if unlink ~/.skk; then
+  echo "Unlinked dotSKK. linking..."
+else
+  echo "dotSKK not linked. linking..."
+fi
 ln -s ~/repos/dotfiles-mac/AquaSKK ~/Library/Application\ Support/
+ln -s ~/repos/dotfiles-mac/AquaSKK ~/.skk
+
