@@ -1,14 +1,13 @@
 return {
   {
     'vim-skk/skkeleton',
-    enabled = false,
     event = { 'InsertEnter', 'CmdlineEnter' },
     cmd = { 'Telescope' },
     dependencies = { 'vim-denops/denops.vim', 'rcarriga/nvim-notify', 'yuki-yano/denops-lazy.nvim' },
     config = function()
       require('denops-lazy').load('skkeleton', { wait_load = false })
-      vim.keymap.set('i', '<C-j>', '<Plug>(skkeleton-toggle)', { remap = true })
-      vim.keymap.set('c', '<C-j>', '<Plug>(skkeleton-toggle)', { remap = true })
+      vim.keymap.set({ 'i', 't' }, '<C-j>', '<Plug>(skkeleton-enable)', { remap = true })
+      vim.keymap.set({ 'i', 't' }, '\\', '<Plug>(skkeleton-disable)', { remap = true })
       vim.fn['skkeleton#config']({
         eggLikeNewline = true,
         globalDictionaries = {
@@ -16,12 +15,13 @@ return {
           '~/.skk/SKK-JISYO.propernoun',
           '~/.skk/SKK-JISYO.law',
           '~/.skk/SKK-JISYO.zipcode',
-          '~/.skk/CorvusSKK/userdict.txt',
+          { '~/.skk/skk-jisyo.utf8', 'utf8' },
         },
-        userJisyo = '~/.skk/neovim-userdict.txt'
+        userJisyo = '~/.skk/skkeleton.txt',
       })
+      vim.fn['skkeleton#register_keymap']('input', '`', 'katakana');
+      vim.fn['skkeleton#register_keymap']('henkan', '`', 'katakana');
       vim.fn['skkeleton#register_kanatable']('rom', {
-        xn = { 'ん' }
       })
     end
   },
@@ -34,3 +34,4 @@ return {
     end
   }
 }
+
