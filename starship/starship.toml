@@ -1,0 +1,94 @@
+# ~/.config/starship.toml
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Change the default prompt format
+format = """\
+[╭╴](238)$env_var$time $all\
+[╰─](238)$character"""
+
+# Change the default prompt characters
+[character]
+success_symbol = "[](238)"
+error_symbol = "[](238)"
+
+# Shows an icon that should be included by zshrc script based on the distribution or os
+[env_var.STARSHIP_DISTRO]
+format = '[$env_value](white)'  # removed space between distro and rest for pwsh
+variable = "STARSHIP_DISTRO"
+disabled = false
+
+# Shows the username
+[username]
+style_user = "white"
+style_root = "black"
+format = "[$user]($style) "
+disabled = false
+show_always = false
+
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = " ~"
+read_only_style = "197"
+read_only = "  "
+format = "at [$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+truncation_length = 20
+truncation_symbol = "…/"
+style = "red"
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = "red"
+conflicted = "🏳 "
+up_to_date = " "
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = " "
+modified = " "
+staged = '[++\($count\)](red)'
+renamed = "襁 "
+deleted = " "
+
+[terraform]
+format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
+
+[vagrant]
+format = "via [ vagrant $version]($style) "
+
+[docker_context]
+format = "via [ $context](blue) "
+
+[helm]
+format = "via [ $version](purple) "
+
+[python]
+symbol = " "
+python_binary = "python3"
+
+[nodejs]
+format = "via [ $version](green) "
+
+[ruby]
+format = "via [ $version]($style) "
+
+[time]
+disabled = false
+format = '\[$time\]'
+time_format = '%T'
+utc_time_offset = '9'
+
+
+#[kubernetes]
+#format = 'on [ $context\($namespace\)](purple) '
+#disabled = false
+#[kubernetes.context_aliases]
+
