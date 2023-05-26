@@ -9,6 +9,7 @@ return {
     config = function()
       require('notify').setup {
         background_colour = '#1E1E2E'
+
       }
     end
   },
@@ -18,6 +19,9 @@ return {
     dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
     config = function ()
       require('noice').setup({
+        messages = {
+          view = 'mini'
+        }
       })
     end
   },
