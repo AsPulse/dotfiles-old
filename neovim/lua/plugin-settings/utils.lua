@@ -2,6 +2,9 @@ return {
   {
     'vim-denops/denops.vim',
     lazy = true,
+    init = function ()
+      vim.api.nvim_set_var('denops#debug', 1)
+    end
   },
   {
     'deris/vim-duzzle',
