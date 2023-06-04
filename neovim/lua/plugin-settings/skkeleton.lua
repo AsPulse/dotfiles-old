@@ -10,7 +10,7 @@ return {
       vim.keymap.set({ 'i', 't' }, '<C-j>', '<Plug>(skkeleton-enable)', { remap = true })
       vim.keymap.set({ 'i', 't' }, '\\', '<Plug>(skkeleton-disable)', { remap = true })
       vim.fn['skkeleton#config']({
-        debug = true,
+        debug = false,
         eggLikeNewline = true,
         globalDictionaries = {
           '~/.skk/SKK-JISYO.L',

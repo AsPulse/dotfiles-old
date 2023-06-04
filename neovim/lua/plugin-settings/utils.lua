@@ -3,7 +3,7 @@ return {
     'vim-denops/denops.vim',
     lazy = true,
     init = function ()
-      vim.api.nvim_set_var('denops#debug', 1)
+      vim.api.nvim_set_var('denops#debug', 0)
     end
   },
   {
