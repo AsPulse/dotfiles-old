@@ -1,12 +1,15 @@
 return {
   {
     'lambdalisue/fern.vim',
-    cmd = { 'Fern' },
+    cmd = { 'Fern', 'FernDo' },
     dependencies = {
       { 'antoinemadec/FixCursorHold.nvim' },
       {
         'lambdalisue/fern-renderer-nerdfont.vim',
         dependencies = { 'lambdalisue/nerdfont.vim', 'lambdalisue/glyph-palette.vim' },
+      },
+      {
+        'lambdalisue/fern-git-status.vim',
       }
     },
     init = function()
@@ -16,6 +19,7 @@ return {
       vim.keymap.set('n', '<C-f>', '<cmd>Fern . -reveal=%<cr>', { noremap = true })
     end,
     config = function()
+      vim.fn['fern_git_status#init']()
       vim.api.nvim_create_autocmd({ 'FileType' }, {
         pattern = { 'fern' },
         callback = function()
