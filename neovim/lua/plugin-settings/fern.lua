@@ -6,7 +6,13 @@ return {
       { 'antoinemadec/FixCursorHold.nvim' },
       {
         'lambdalisue/fern-renderer-nerdfont.vim',
-        dependencies = { 'lambdalisue/nerdfont.vim', 'lambdalisue/glyph-palette.vim' },
+        dependencies = {
+          {
+            'AsPulse/nerdfont.vim',
+            branch = 'feat/icons-around-js-ecosystems',
+          },
+          'lambdalisue/glyph-palette.vim'
+        },
       },
       {
         'lambdalisue/fern-git-status.vim',
