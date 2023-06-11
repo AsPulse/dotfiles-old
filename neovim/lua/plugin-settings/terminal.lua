@@ -1,4 +1,5 @@
 local _terminal_lazygit = nil
+local _terminal_aicommits = nil
 
 local _terminal_worker = nil
 local _terminal_worker_cwd = nil
@@ -46,6 +47,23 @@ local function _terminal_lazygit_open()
 
 end
 
+local function _terminal_aicommits_open()
+  if _terminal_aicommits ~= nil then
+    _terminal_aicommits:shutdown()
+  end
+
+  _terminal_aicommits = require('toggleterm.terminal').Terminal:new({
+    cmd = 'zsh',
+    dir = vim.fn.getcwd(),
+    direction = 'float',
+    hidden = true,
+    count = 1,
+  })
+
+  _terminal_aicommits:open()
+  _terminal_aicommits:send('git ac ; exit')
+end
+
 local function _terminal_server_open()
   if _terminal_server == nil then
     _terminal_server = require('toggleterm.terminal').Terminal:new({
@@ -77,6 +95,7 @@ return {
     event = { 'VeryLazy' },
     init = function()
       vim.keymap.set('n', '<leader>git', _terminal_lazygit_open, { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>aic', _terminal_aicommits_open, { noremap = true, silent = true })
       vim.keymap.set('n', '<leader>termw', _terminal_worker_open, { noremap = true, silent = true })
       vim.keymap.set('n', '<leader>terms', _terminal_server_open, { noremap = true, silent = true })
       vim.keymap.set('t', '\\n', '<C-\\><C-n>', { noremap = true, silent = true })
