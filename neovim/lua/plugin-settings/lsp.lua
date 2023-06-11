@@ -30,7 +30,8 @@ return {
           'lua_ls',
           'denols',
           'clangd',
-          'yamlls'
+          'yamlls',
+          'rust_analyzer',
         },
         automatic_installation = true,
       })

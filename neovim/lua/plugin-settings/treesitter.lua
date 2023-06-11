@@ -22,8 +22,9 @@ return {
           'diff',
           'dockerfile',
           'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
-          'html', 'json5', 'lua', 'markdown', 'yaml',
-          'cpp'
+          'rust',
+          'html', 'json5', 'lua', 'markdown', 'yaml', 'toml',
+          'cpp',
         },
         highlight = { enable = true },
         indent = { enable = false },
