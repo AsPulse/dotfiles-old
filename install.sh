@@ -25,6 +25,10 @@ mkdir -p ~/.vim
 mkdir -p ~/.vim/tsnip
 stow -R -v -d ./ -t ~/.vim/tsnip tsnip
 
+mkdir -p ~/git
+stow -R -v -d ./ -t ~/git git
+git config --global core.excludesfile ~/git/.gitignore_global
+
 if unlink ~/Library/Application\ Support/AquaSKK; then
   echo "Unlinked AquaSKK. linking..."
 else
