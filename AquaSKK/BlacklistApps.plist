@@ -6,7 +6,7 @@
 		<key>bundleIdentifier</key>
 		<string>com.microsoft.powerpoint</string>
 		<key>insertMarkedText</key>
-		<true/>
+		<false/>
 	</dict>
 	<dict>
 		<key>bundleIdentifier</key>
