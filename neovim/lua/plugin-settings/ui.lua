@@ -13,18 +13,18 @@ return {
       }
     end
   },
-  {
-    'folke/noice.nvim',
-    event = 'VeryLazy',
-    dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
-    config = function ()
-      require('noice').setup({
-        messages = {
-          view = 'mini'
-        }
-      })
-    end
-  },
+  -- {
+  --   'folke/noice.nvim',
+  --   event = 'VeryLazy',
+  --   dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
+  --   config = function ()
+  --     require('noice').setup({
+  --       messages = {
+  --         view = 'mini'
+  --       }
+  --     })
+  --   end
+  -- },
   {
     'lewis6991/gitsigns.nvim',
     event = { 'BufEnter *.*', 'VeryLazy' },
@@ -45,4 +45,16 @@ return {
       }
     end
   },
+  {
+    'j-hui/fidget.nvim',
+    event = { 'BufEnter *.*' },
+    tag = 'legacy',
+    config = function()
+      require('fidget').setup({
+        text = {
+          spinner = 'dots_pulse'
+        }
+      })
+    end
+  }
 }

@@ -6,8 +6,8 @@ return {
       require('satellite').setup()
     end
   },
-  {
-    'psliwka/vim-smoothie',
-    event = 'VeryLazy',
-  }
+  -- {
+  --   'psliwka/vim-smoothie',
+  --   event = 'VeryLazy',
+  -- }
 }
