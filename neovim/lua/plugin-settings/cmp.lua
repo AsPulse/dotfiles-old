@@ -178,7 +178,20 @@ return {
             local rt = require('rust-tools')
             rt.setup({
               server = {
-                on_attach = on_attach,
+                on_attach = function(client, bufnr)
+                  on_attach(client, bufnr)
+                  vim.keymap.set('n', 'K', rt.hover_actions.hover_actions, { buffer = bufnr })
+                end
+              },
+              settings = {
+                ['rust-analyzer'] = {
+                  lens = {
+                    enable = true
+                  },
+                  checkOnSave = {
+                    command = 'clippy'
+                  }
+                }
               }
             })
             return
