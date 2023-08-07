@@ -61,7 +61,7 @@ local function _terminal_aicommits_open()
   })
 
   _terminal_aicommits:open()
-  _terminal_aicommits:send('git ac ; exit')
+  _terminal_aicommits:send('aicommits -a -g 5 ; exit')
 end
 
 local function _terminal_server_open()

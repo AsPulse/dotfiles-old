@@ -34,4 +34,3 @@ require('lazy').setup(pluginSettings, {
 required.under('commands')
 
 vim.g.isReload = true;
-

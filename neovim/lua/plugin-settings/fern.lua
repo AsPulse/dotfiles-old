@@ -8,8 +8,7 @@ return {
         'lambdalisue/fern-renderer-nerdfont.vim',
         dependencies = {
           {
-            'AsPulse/nerdfont.vim',
-            branch = 'feat/icons-around-js-ecosystems',
+            'lambdalisue/nerdfont.vim',
           },
           'lambdalisue/glyph-palette.vim'
         },

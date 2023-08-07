@@ -1,7 +1,7 @@
 return {
   {
-    'AsPulse/skkeleton',
-    branch = 'feat/load-rule-file',
+    'vim-skk/skkeleton',
+    enabled = false,
     event = { 'InsertEnter', 'CmdlineEnter' },
     cmd = { 'Telescope' },
     dependencies = { 'vim-denops/denops.vim', 'rcarriga/nvim-notify', 'yuki-yano/denops-lazy.nvim' },

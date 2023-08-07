@@ -1,6 +1,6 @@
 local set = vim.api.nvim_set_option
 
-vim.api.nvim_command('language en_US')
+-- vim.api.nvim_command('language en_US')
 
 set('encoding', 'utf-8')
 set('autoread', true)

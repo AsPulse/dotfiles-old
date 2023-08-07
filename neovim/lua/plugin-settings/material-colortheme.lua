@@ -1,16 +1,17 @@
 function Material_colortheme_customMap()
+  local color = '#2b2541';
   vim.api.nvim_set_hl(0, '@field', { fg='#a6accd' })
   vim.api.nvim_set_hl(0, '@property', { fg='#ffcd6b' })
   vim.api.nvim_set_hl(0, 'ModeMsg', { fg='#303030' })
 
-  vim.api.nvim_set_hl(0, 'Normal', { bg='none' })
-  vim.api.nvim_set_hl(0, 'NormalFloat', { bg='none' })
-  vim.api.nvim_set_hl(0, 'FloatBorder', { bg='none' })
-  vim.api.nvim_set_hl(0, 'NormalNC', { bg='none' })
-  vim.api.nvim_set_hl(0, 'NonText', { bg='none' })
-  vim.api.nvim_set_hl(0, 'LineNr', { bg='none' })
-  vim.api.nvim_set_hl(0, 'Folded', { bg='none' })
-  vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg='none' })
+  vim.api.nvim_set_hl(0, 'Normal', { bg=color })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg=color })
+  vim.api.nvim_set_hl(0, 'FloatBorder', { bg=color })
+  vim.api.nvim_set_hl(0, 'NormalNC', { bg=color })
+  vim.api.nvim_set_hl(0, 'NonText', { bg=color })
+  vim.api.nvim_set_hl(0, 'LineNr', { bg=color })
+  vim.api.nvim_set_hl(0, 'Folded', { bg=color })
+  vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg=color })
 
   vim.api.nvim_set_hl(0, 'CmpFloating', { bg='#2b2541' })
   vim.api.nvim_set_hl(0, 'CmpFloatingCursor', { bg='#434267' })
@@ -30,7 +31,7 @@ function Material_colortheme_customMap()
 
   vim.api.nvim_set_hl(0, 'TreesitterContext', { bg='#665e8f' })
 
-  vim.api.nvim_set_hl(0, 'BufferLineFill', { bg='none' })
+  vim.api.nvim_set_hl(0, 'BufferLineFill', { bg=color })
 end
 
 return {
