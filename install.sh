@@ -1,9 +1,11 @@
 #!/bin/sh
 set -e
 
+sudo apt update
+sudo apt install gcc g++ make
+
 # Install Homebrew
-if [ ! -f /usr/local/bin/brew ]
- then
+if ! command -v brew > /dev/null 2>&1 ; then
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
  else
@@ -25,20 +27,12 @@ mkdir -p ~/.vim
 mkdir -p ~/.vim/tsnip
 stow -R -v -d ./ -t ~/.vim/tsnip tsnip
 
+stow -R -v zsh -t ~/
+
 mkdir -p ~/git
 stow -R -v -d ./ -t ~/git git
 git config --global core.excludesfile ~/git/.gitignore_global
 
-if unlink ~/Library/Application\ Support/AquaSKK; then
-  echo "Unlinked AquaSKK. linking..."
-else
-  echo "AquaSKK not linked. linking..."
-fi
-if unlink ~/.skk; then
-  echo "Unlinked dotSKK. linking..."
-else
-  echo "dotSKK not linked. linking..."
-fi
-ln -s ~/repos/dotfiles-mac/AquaSKK ~/Library/Application\ Support/
-ln -s ~/repos/dotfiles-mac/AquaSKK ~/.skk
+
+
 
