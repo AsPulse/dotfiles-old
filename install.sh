@@ -12,6 +12,7 @@ if ! command -v brew > /dev/null 2>&1 ; then
   echo "Homebrew already installed."
 fi
 
+ulimit -n 65535
 brew bundle
 curl https://get.volta.sh | bash
 
@@ -33,6 +34,5 @@ mkdir -p ~/git
 stow -R -v -d ./ -t ~/git git
 git config --global core.excludesfile ~/git/.gitignore_global
 
-
-
+npm install -g typescript typescript-language-server
 

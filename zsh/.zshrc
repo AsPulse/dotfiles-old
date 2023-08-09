@@ -14,3 +14,5 @@ export GPG_TTY=$TTY
 eval "$(starship init zsh)"
 
 alias popi='popi_result=$(~/repos/popi/target/release/popi) && [[ $? -eq 0 ]] && (cd "$popi_result" && nvim --headless --listen localhost:6666 . &; nvimserver=$!; neovide.exe --remote-tcp=localhost:6666 --multigrid; kill "$nvimserver")'
+
+ulimit -n 65535

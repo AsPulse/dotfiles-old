@@ -23,7 +23,7 @@ return {
           'dockerfile',
           'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
           'rust',
-          'html', 'json5', 'lua', 'markdown', 'yaml', 'toml',
+          'html', 'json5', 'lua', 'markdown', 'markdown_inline', 'yaml', 'toml',
           'cpp',
         },
         highlight = { enable = true },

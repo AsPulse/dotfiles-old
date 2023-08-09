@@ -24,14 +24,6 @@ return {
       { 'yutkat/cmp-mocword' },
       { 'SmiteshP/nvim-navic' },
       {
-        'yioneko/nvim-vtsls',
-        config = function()
-          require('vtsls').config({
-            name = 'vtsls'
-          })
-        end
-      },
-      {
         'simrat39/rust-tools.nvim'
       }
     },
@@ -130,7 +122,7 @@ return {
       require('mason-lspconfig').setup_handlers({
         function(server_name)
           local setupfunc = lspconfig[server_name]
-          if server_name == 'vtsls' then
+          if server_name == 'tsserver' then
             setupfunc.setup({
               on_attach = function(client, bufnr)
                 on_attach(client, bufnr)
@@ -142,7 +134,7 @@ return {
                 })
               end,
               capabilities = capabilities,
-              root_dir = lspconfig.util.root_pattern('yarn.lock'),
+              root_dir = lspconfig.util.root_pattern('yarn.lock', 'package-lock.json', 'pnpm-lock.json'),
               single_file_support = false,
             })
             return

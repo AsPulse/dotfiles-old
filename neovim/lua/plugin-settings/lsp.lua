@@ -11,7 +11,8 @@ return {
       'williamboman/mason.nvim',
       'jose-elias-alvarez/null-ls.nvim',
       'jay-babu/mason-null-ls.nvim',
-      'nvim-lua/plenary.nvim'
+      'nvim-lua/plenary.nvim',
+      'nvimdev/lspsaga.nvim',
     },
     config = function()
       require('mason').setup({
@@ -25,7 +26,8 @@ return {
       })
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'vtsls',
+          'tsserver',
+          'volar',
           'eslint',
           'lua_ls',
           'denols',
@@ -51,11 +53,19 @@ return {
     end
   },
   {
-    'kkharji/lspsaga.nvim',
-    event = 'BufEnter *.*',
-    dependencies = { 'williamboman/mason-lspconfig.nvim' },
+    'nvimdev/lspsaga.nvim',
+    event = { 'BufEnter *.*' },
+    dependencies = {
+      'williamboman/mason-lspconfig.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
     config = function ()
-      require('lspsaga').setup({})
+      require('lspsaga').setup({
+        ui = {
+          border = 'rounded',
+        }
+      })
       vim.keymap.set('n', '<leader>rn', function() vim.api.nvim_command('Lspsaga rename') end, {})
       vim.keymap.set('n', '<leader>ac', function() vim.api.nvim_command('Lspsaga code_action') end, {})
       vim.keymap.set('n', 'K', function() vim.api.nvim_command('Lspsaga hover_doc') end, {})
