@@ -2,7 +2,7 @@
 set -e
 
 sudo apt update
-sudo apt install gcc g++ make
+sudo apt install gcc g++ make net-tools
 
 # Install Homebrew
 if ! command -v brew > /dev/null 2>&1 ; then

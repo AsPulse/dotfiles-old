@@ -13,6 +13,53 @@ export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
 eval "$(starship init zsh)"
 
-alias popi='popi_result=$(~/repos/popi/target/release/popi) && [[ $? -eq 0 ]] && (cd "$popi_result" && nvim --headless --listen localhost:6666 . &; nvimserver=$!; neovide.exe --remote-tcp=localhost:6666 --multigrid; kill "$nvimserver")'
 
 ulimit -n 65535
+
+# export XDG_RUNTIME_DIR=/tmp/xdg
+# export WAYLAND_DISPLAY=wayland-0
+# export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+# export LIBGL_ALWAYS_INDIRECT=0
+
+function find_first_free_port() {
+  local start_port=$1
+  local end_port=$2
+
+  local used_ports=$(netstat -tuln | grep -oE ':([0-9]{1,5})' | tr -d ':' | sort -nu)
+
+  for port in {$start_port..$end_port}; do
+    if ! echo "$used_ports" | grep -wq $port; then
+      echo $port
+      return 0
+    fi
+  done
+
+  echo -1
+  return 1
+}
+
+function neovide() {
+  local port=$(find_first_free_port 6000 7000)
+  if [[ $port -eq -1 ]]; then
+    echo "No free port found for neovide. (:6000 - :7000)"
+    return 1
+  fi
+  nvim --headless --listen localhost:$port "$*" &
+  local nvimserver=$!
+  echo "Runnning nvim server using :$port, pid: $nvimserver..."
+
+  neovide.exe --multigrid --remote-tcp=localhost:$port
+  kill $nvimserver
+}
+
+function popi_before() {
+  local popi_result=$(~/repos/popi/target/release/popi)
+  if [[ $? -eq 0 ]]; then
+    cd "$popi_result"
+    "$@"
+  fi
+}
+
+alias pn='popi_before neovide'
+alias pnvim='popi_before nvim'
+alias pcd='popi_before'
