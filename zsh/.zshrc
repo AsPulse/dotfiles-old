@@ -39,6 +39,7 @@ function find_first_free_port() {
 }
 
 function neovide() {
+  local neovide="/mnt/c/Users/aspulse/Documents/repos/neovide/target/release/neovide.exe"
   local port=$(find_first_free_port 6000 7000)
   if [[ $port -eq -1 ]]; then
     echo "No free port found for neovide. (:6000 - :7000)"
@@ -48,7 +49,7 @@ function neovide() {
   local nvimserver=$!
   echo "Runnning nvim server using :$port, pid: $nvimserver..."
 
-  neovide.exe --multigrid --remote-tcp=localhost:$port
+  $neovide --multigrid --remote-tcp=localhost:$port
   kill $nvimserver
 }
 
