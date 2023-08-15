@@ -54,11 +54,13 @@ function neovide() {
 }
 
 function popi_before() {
-  local popi_result=$(~/repos/popi/target/release/popi)
-  if [[ $? -eq 0 ]]; then
-    cd "$popi_result"
-    "$@"
+  local popi_result=$(mktemp)
+  ~/repos/popi/target/release/popi > "$popi_result"
+  if [[ $? -ne 0 ]]; then
+    return 1
   fi
+  cd "$(cat $popi_result)"
+  "$@"
 }
 
 alias pn='popi_before neovide'
