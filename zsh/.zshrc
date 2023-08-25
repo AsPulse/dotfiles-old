@@ -11,6 +11,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 . "$HOME/.cargo/env"
 export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
+export BROWSER="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
 eval "$(starship init zsh)"
 
 
@@ -63,6 +64,9 @@ function popi_before() {
   "$@"
 }
 
+function cd() {
+  builtin cd "$(~/repos/wsl-dirutils/target/release/wsl-dirutils convert "$*")"
+}
 alias pn='popi_before neovide'
 alias pnvim='popi_before nvim'
 alias pcd='popi_before'
