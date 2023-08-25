@@ -35,4 +35,4 @@ stow -R -v -d ./ -t ~/git git
 git config --global core.excludesfile ~/git/.gitignore_global
 
 npm install -g typescript typescript-language-server
-
+gh extension install seachicken/gh-poi
