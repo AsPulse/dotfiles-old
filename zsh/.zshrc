@@ -8,7 +8,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-. "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/env:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
 export BROWSER="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"

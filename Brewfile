@@ -1,4 +1,8 @@
 tap "homebrew/bundle"
+brew "python"
+brew "jq"
+brew "yq"
+brew "cloudflared"
 brew "zsh"
 brew "gh"
 brew "wget"

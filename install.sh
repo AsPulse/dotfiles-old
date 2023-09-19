@@ -13,8 +13,9 @@ if ! command -v brew > /dev/null 2>&1 ; then
 fi
 
 ulimit -n 65535
-brew bundle
+brew bundle || true
 curl https://get.volta.sh | bash
+curl -sSL https://install.python-poetry.org | python3 -
 
 mkdir -p ~/.config
 mkdir -p ~/.config/nvim
@@ -33,6 +34,6 @@ stow -R -v zsh -t ~/
 mkdir -p ~/git
 stow -R -v -d ./ -t ~/git git
 git config --global core.excludesfile ~/git/.gitignore_global
-
-npm install -g typescript typescript-language-server
+ 
+volta install typescript typescript-language-server lehre turbo
 gh extension install seachicken/gh-poi
