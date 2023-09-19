@@ -22,6 +22,7 @@ return {
       vim.api.nvim_set_var('fern#renderer#nerdfont#indent_markers', true)
       vim.api.nvim_set_var('fern#default_hidden', true)
       vim.keymap.set('n', '<C-f>', '<cmd>Fern . -reveal=%<cr>', { noremap = true })
+      vim.keymap.set('n', '<M-f>', '<cmd>bufdo bd<cr><cmd>Fern . -reveal=%<cr>', { noremap = true })
     end,
     config = function()
       vim.fn['fern_git_status#init']()
