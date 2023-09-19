@@ -34,6 +34,7 @@ return {
           'denols',
           'clangd',
           'yamlls',
+          'pyright',
           'rust_analyzer',
         },
         automatic_installation = true,

@@ -23,6 +23,7 @@ return {
           'dockerfile',
           'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
           'rust',
+          'python',
           'html', 'json5', 'lua', 'markdown', 'markdown_inline', 'yaml', 'toml',
           'cpp',
         },
