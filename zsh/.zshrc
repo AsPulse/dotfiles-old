@@ -67,6 +67,11 @@ function popi_before() {
 function cd() {
   builtin cd "$(~/repos/wsl-dirutils/target/release/wsl-dirutils convert "$*")"
 }
+function pwd() {
+  ~/repos/wsl-dirutils/target/release/wsl-dirutils pwd > /dev/null
+}
+
+
 alias pn='popi_before neovide'
 alias pnvim='popi_before nvim'
 alias pcd='popi_before'

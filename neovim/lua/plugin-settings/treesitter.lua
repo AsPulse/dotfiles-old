@@ -18,7 +18,7 @@ return {
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
-          'typescript', 'tsx',
+          'typescript', 'tsx', 'jsdoc',
           'diff',
           'dockerfile',
           'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
