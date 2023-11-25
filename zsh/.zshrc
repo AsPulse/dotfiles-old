@@ -8,7 +8,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$HOME/.cargo/env:$PATH"
+source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
 export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
@@ -52,7 +52,6 @@ function neovide() {
   echo "Runnning nvim server using :$port, pid: $nvimserver..."
 
   $neovide --multigrid --remote-tcp=localhost:$port
-  kill $nvimserver
 }
 
 function popi_before() {
