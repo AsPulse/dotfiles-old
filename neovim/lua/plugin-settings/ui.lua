@@ -40,8 +40,8 @@ return {
     event = { 'BufEnter *.*', 'VeryLazy' },
     dependencies = { 'marko-cerovac/material.nvim' },
     config = function ()
-      require('indent_blankline') .setup {
-        chat_highlight_list = { 'NonText' }
+      require('ibl') .setup {
+        -- chat_highlight_list = { 'NonText' }
       }
     end
   },

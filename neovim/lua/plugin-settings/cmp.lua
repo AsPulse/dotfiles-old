@@ -129,12 +129,14 @@ return {
                 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
                   buffer = bufnr,
                   callback = function()
-                    vim.cmd([[EslintFixAll]])
+                    if vim.fn.exists(':EslintFixAll') > 0 then
+                      vim.cmd([[EslintFixAll]])
+                    end
                   end
                 })
               end,
               capabilities = capabilities,
-              root_dir = lspconfig.util.root_pattern('yarn.lock', 'package-lock.json', 'pnpm-lock.json'),
+              root_dir = lspconfig.util.root_pattern('yarn.lock', 'package-lock.json', 'pnpm-lock.json', 'pnpm-lock.yaml'),
               single_file_support = false,
             })
             return

@@ -6,7 +6,7 @@ return {
     },
     lazy = true,
     event = { 'BufEnter *.*' },
-    tag = '0.1.0',
+    tag = '0.1.4',
     init = function()
       local builtin = function(name)
         return function ()
