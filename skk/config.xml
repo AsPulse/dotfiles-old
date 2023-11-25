@@ -120,8 +120,8 @@
   <section name="keymap">
     <key name="kana" value="`" />
     <key name="convchar" value="\c`" />
-    <key name="jlatin" value="L" />
-    <key name="ascii" value="l" />
+    <key name="jlatin" value="" />
+    <key name="ascii" value="" />
     <key name="jmode" value="" />
     <key name="abbrev" value="/" />
     <key name="affix" value="&lt;|>" />
@@ -376,6 +376,7 @@
       <row ro="zo" hi="ぞ" ka="ゾ" an="ｿﾞ" so="0" />
       <row ro="zz" hi="ざん" ka="ザン" an="ｻﾞﾝ" so="0" />
       <row ro="zn" hi="ざん" ka="ザン" an="ｻﾞﾝ" so="0" />
+      <row ro="jk" hi="じん" ka="ジン" an="ｼﾞﾝ" so="0" />
       <row ro="zk" hi="じん" ka="ジン" an="ｼﾞﾝ" so="0" />
       <row ro="zj" hi="ずん" ka="ズン" an="ｽﾞﾝ" so="0" />
       <row ro="zd" hi="ぜん" ka="ゼン" an="ｾﾞﾝ" so="0" />
@@ -713,6 +714,14 @@
       <row ro="dci" hi="でぃ" ka="ディ" an="ﾃﾞｨ" so="0" />
       <row ro="dcu" hi="どぅ" ka="ドゥ" an="ﾄﾞｩ" so="0" />
       <row ro="wso" hi="うぉ" ka="ウォ" an="ｳｫ" so="0" />
+      <row ro="la" hi="ぁ" ka="ァ" an="ｧ" so="0" />
+      <row ro="li" hi="ぃ" ka="ィ" an="ｨ" so="0" />
+      <row ro="lu" hi="ぅ" ka="ゥ" an="ｩ" so="0" />
+      <row ro="le" hi="ぇ" ka="ェ" an="ｪ" so="0" />
+      <row ro="lo" hi="ぉ" ka="ォ" an="ｫ" so="0" />
+      <row ro="lya" hi="ゃ" ka="ャ" an="ｬ" so="0" />
+      <row ro="lyu" hi="ゅ" ka="ュ" an="ｭ" so="0" />
+      <row ro="lyo" hi="ょ" ka="ョ" an="ｮ" so="0" />
       <row ro="xxa" hi="ぁ" ka="ァ" an="ｧ" so="0" />
       <row ro="xxi" hi="ぃ" ka="ィ" an="ｨ" so="0" />
       <row ro="xxu" hi="ぅ" ka="ゥ" an="ｩ" so="0" />
@@ -721,8 +730,6 @@
       <row ro="xxya" hi="ゃ" ka="ャ" an="ｬ" so="0" />
       <row ro="xxyu" hi="ゅ" ka="ュ" an="ｭ" so="0" />
       <row ro="xxyo" hi="ょ" ka="ョ" an="ｮ" so="0" />
-      <row ro="kA" hi="ゕ" ka="ヵ" an="ｶ" so="0" />
-      <row ro="kE" hi="ゖ" ka="ヶ" an="ｹ" so="0" />
       <row ro=";" hi="っ" ka="ッ" an="ｯ" so="0" />
       <row ro="q" hi="ん" ka="ン" an="ﾝ" so="0" />
       <row ro="-" hi="ー" ka="ー" an="ｰ" so="0" />
@@ -800,7 +807,7 @@
       <row ro="z," hi="‥" ka="‥" an="‥" so="0" />
       <row ro="z-" hi="～" ka="～" an="～" so="0" />
       <row ro="~" hi="〜" ka="〜" an="〜" so="0" />
-      <row ro="z." hi="…" ka="…" an="…" so="0" />
+      <row ro="z." hi="…" ka="……" an="……" so="0" />
       <row ro="z/" hi="・" ka="・" an="･" so="0" />
       <row ro="z(" hi="（" ka="（" an="（" so="0" />
       <row ro="z)" hi="）" ka="）" an="）" so="0" />
@@ -815,6 +822,7 @@
       <row ro="xxk" hi="↑" ka="↑" an="↑" so="0" />
       <row ro="xxl" hi="→" ka="→" an="→" so="0" />
       <row ro="xxL" hi="⇒" ka="⇒" an="⇒" so="0" />
+      <row ro="xxE" hi="⇔" ka="⇔" an="⇔" so="0" />
     </list>
   </section>
   <section name="jlatin">
