@@ -35,5 +35,5 @@ mkdir -p ~/git
 stow -R -v -d ./ -t ~/git git
 git config --global core.excludesfile ~/git/.gitignore_global
  
-volta install typescript typescript-language-server lehre turbo
+volta install np live-server typescript typescript-language-server lehre turbo pnpm turbo aicommits aic
 gh extension install seachicken/gh-poi
