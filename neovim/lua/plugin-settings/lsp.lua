@@ -33,6 +33,7 @@ return {
           'lua_ls',
           'denols',
           'clangd',
+          'jsonls',
           'yamlls',
           'pyright',
           'rust_analyzer',

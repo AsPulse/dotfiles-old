@@ -25,7 +25,8 @@ return {
       { 'SmiteshP/nvim-navic' },
       {
         'simrat39/rust-tools.nvim'
-      }
+      },
+      { 'b0o/schemastore.nvim' },
     },
     config = function()
       local cmp = require('cmp')
@@ -163,6 +164,19 @@ return {
                   diagnostics = {
                     globals = { 'vim' }
                   }
+                }
+              }
+            })
+            return
+          end
+          if server_name == 'jsonls' then
+            setupfunc.setup({
+              on_attach = on_attach,
+              capabilities = capabilities,
+              settings = {
+                json = {
+                  schemas = require('schemastore').json.schemas(),
+                  validate = { enable = true },
                 }
               }
             })
