@@ -42,9 +42,9 @@ function find_first_free_port() {
 
 function neovide() {
   local neovide="/mnt/c/Users/aspulse/Documents/repos/neovide/target/release/neovide.exe"
-  local port=$(find_first_free_port 6000 7000)
+  local port=$(find_first_free_port 7000 7100)
   if [[ $port -eq -1 ]]; then
-    echo "No free port found for neovide. (:6000 - :7000)"
+    echo "No free port found for neovide. (:7000 - :7100)"
     return 1
   fi
   nvim --headless --listen localhost:$port "$*" &
