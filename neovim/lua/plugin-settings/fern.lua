@@ -34,7 +34,7 @@ return {
             { buffer = true, remap = true}
           )
           vim.keymap.set(
-            'n', 'cwd', 'gg<Plug>(fern-action-cd)',
+            'n', 'D', '<Plug>(fern-action-remove)',
             { buffer = true, silent = true, remap = false }
           )
           vim.opt_local.number = false
