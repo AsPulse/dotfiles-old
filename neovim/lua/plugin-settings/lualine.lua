@@ -11,8 +11,25 @@ return {
       navic.setup({
         highlight = false,
       })
-      require('lualine').setup {
+      local show_macro_recording = function()
+        local recording_register = vim.fn.reg_recording()
+        if recording_register == '' then
+            return ''
+        else
+            return 'Recording @' .. recording_register
+        end
+      end
+
+      local lualine = require('lualine')
+      lualine.setup {
         sections = {
+          lualine_a = {
+            'mode',
+            {
+              'macro-recording',
+              fmt = show_macro_recording,
+            },
+          },
           lualine_c = {
             {
               function()
@@ -32,6 +49,25 @@ return {
           'toggleterm'
         }
       }
+
+      local lualine_refresh = function()
+        lualine.refresh({
+          place = { "statusline" },
+        })
+      end
+
+      vim.api.nvim_create_autocmd("RecordingEnter", {
+        callback = lualine_refresh,
+      })
+
+      vim.api.nvim_create_autocmd("RecordingLeave", {
+        callback = function()
+          local timer = vim.loop.new_timer()
+          timer:start(50, 0, vim.schedule_wrap(lualine_refresh))
+        end,
+      })
     end
+
+
   }
 }
