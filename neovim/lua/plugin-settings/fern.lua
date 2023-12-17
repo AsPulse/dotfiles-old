@@ -12,7 +12,6 @@ local function default_fern_compare(n1, n2)
     else
       local _t1 = index == l1 and t1 or 1
       local _t2 = index == l2 and t2 or 1
-      print(index, l1, l2, t1, t2);
       if _t1 == _t2 then
         -- Lexical compare
         if k1[index] > k2[index] then
