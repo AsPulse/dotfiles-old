@@ -38,6 +38,13 @@ return {
     event = 'BufEnter *.*',
   },
   {
+    'thinca/vim-textobj-between',
+    dependencies = {
+      'kana/vim-textobj-user'
+    },
+    event = 'BufEnter *.*',
+  },
+  {
     'nvim-tree/nvim-web-devicons',
     config = function ()
       require('nvim-web-devicons').setup({
