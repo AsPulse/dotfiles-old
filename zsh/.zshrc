@@ -12,7 +12,7 @@ source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
 export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
-export BROWSER="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
+export BROWSER="/mnt/c/Users/aspulse/AppData/Local/Vivaldi/Application/vivaldi.exe"
 eval "$(starship init zsh)"
 
 
