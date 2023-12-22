@@ -189,6 +189,16 @@ return {
                 on_attach = function(client, bufnr)
                   on_attach(client, bufnr)
                   vim.keymap.set('n', 'K', rt.hover_actions.hover_actions, { buffer = bufnr })
+                  vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+                    buffer = bufnr,
+                    callback = function()
+                      if vim.fn.exists(':RustFmt') > 0 then
+                        vim.cmd([[RustFmt]])
+                      else
+                        print('rustfmt not found')
+                      end
+                    end
+                  })
                 end,
                 settings = {
                   ['rust-analyzer'] = {
