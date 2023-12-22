@@ -189,18 +189,19 @@ return {
                 on_attach = function(client, bufnr)
                   on_attach(client, bufnr)
                   vim.keymap.set('n', 'K', rt.hover_actions.hover_actions, { buffer = bufnr })
-                end
-              },
-              settings = {
-                ['rust-analyzer'] = {
-                  lens = {
-                    enable = true
-                  },
-                  checkOnSave = {
-                    command = 'clippy'
+                end,
+                settings = {
+                  ['rust-analyzer'] = {
+                    check = {
+                      command = 'clippy'
+                    },
+                    lens = {
+                      enable = true
+                    },
+                    checkOnSave = true,
                   }
                 }
-              }
+              },
             })
             return
           end
