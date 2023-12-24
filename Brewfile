@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+brew "bat"
 brew "python"
 brew "jq"
 brew "yq"
