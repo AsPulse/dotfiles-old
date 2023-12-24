@@ -15,6 +15,11 @@ return {
     },
   },
   lazy = true,
+  event = 'VeryLazy',
+  cmd = {
+    'FzfPreviewDirectoryFilesRpc',
+    'FzfPreviewProjectGrepRpc',
+  },
   init = function()
     fzf_keymap('ff', 'DirectoryFilesRpc')
     fzf_keymap('fb', 'BuffersRpc')
