@@ -1,26 +1,31 @@
 return {
   {
     'vim-skk/skkeleton',
-    enabled = false,
+    enabled = true,
     event = { 'InsertEnter', 'CmdlineEnter' },
     cmd = { 'Telescope' },
     dependencies = { 'vim-denops/denops.vim', 'rcarriga/nvim-notify', 'yuki-yano/denops-lazy.nvim' },
     config = function()
       require('denops-lazy').load('skkeleton', { wait_load = false })
-      vim.keymap.set({ 'i', 't' }, '<C-j>', '<Plug>(skkeleton-enable)', { remap = true })
-      vim.keymap.set({ 'i', 't' }, '<C-\\>', '<Plug>(skkeleton-disable)', { remap = true })
+      vim.keymap.set({ 'i', 't' }, '<F13>', '<Plug>(skkeleton-enable)', { remap = true })
+      vim.keymap.set({ 'i', 't' }, '<F14>', '<Plug>(skkeleton-disable)', { remap = true })
       vim.fn['skkeleton#config']({
         debug = false,
         eggLikeNewline = true,
         globalDictionaries = {
-          '~/.skk/SKK-JISYO.L',
-          '~/.skk/SKK-JISYO.propernoun',
-          '~/.skk/SKK-JISYO.law',
-          '~/.skk/SKK-JISYO.zipcode',
-          { '~/.skk/skk-jisyo.utf8', 'utf8' },
+          '~/.skk/dicts/SKK-JISYO.fullname',
+          '~/.skk/dicts/SKK-JISYO.assoc',
+          '~/.skk/dicts/SKK-JISYO.geo',
+          '~/.skk/dicts/SKK-JISYO.jinmei',
+          '~/.skk/dicts/SKK-JISYO.zipcode',
+          '~/.skk/dicts/SKK-JISYO.L',
+          '~/.skk/dicts/SKK-JISYO.law',
+          '~/.skk/dicts/SKK-JISYO.propernoun',
+          '~/.skk/dicts/SKK-JISYO.station',
+          { '~/.skk/userdict.txt', 'utf16' },
         },
         globalKanaTableFiles = {
-          { '~/.skk/azik_us.rule', 'euc-jp' },
+          { '~/.skk/azik_us.rule', 'utf8' },
         },
         userJisyo = '~/.skk/skkeleton.txt',
       })
@@ -37,4 +42,3 @@ return {
     end
   }
 }
-
