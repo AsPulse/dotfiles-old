@@ -14,11 +14,7 @@ local function default_fern_compare(n1, n2)
       local _t2 = index == l2 and t2 or 1
       if _t1 == _t2 then
         -- Lexical compare
-        if k1[index] > k2[index] then
-          return 1
-        else
-          return -1
-        end
+        return k1[index]:lower() > k2[index]:lower() and 1 or -1
       else
         -- Directory first
         return _t1 == 1 and -1 or 1
@@ -33,9 +29,16 @@ local function default_fern_compare(n1, n2)
   end
 
   -- Leaf first
-  return vim.fn['fern#util#compare'](n1.status == 0, n2.status == 0)
+  return vim.fn['fern#util#compare'](t1 == 0,t2 == 0)
 end
 
+local function get_keys(t)
+  local keys={}
+  for key,_ in pairs(t) do
+    table.insert(keys, key)
+  end
+  return keys
+end
 return {
   {
     'lambdalisue/fern.vim',
@@ -53,6 +56,12 @@ return {
       },
       {
         'lambdalisue/fern-git-status.vim',
+      },
+      {
+        'LumaKernel/fern-mapping-reload-all.vim'
+      },
+      {
+        'lambdalisue/fern-comparator-lexical.vim'
       }
     },
     init = function()
@@ -74,6 +83,10 @@ return {
           vim.keymap.set(
             'n', 'D', '<Plug>(fern-action-remove)',
             { buffer = true, silent = true, remap = false }
+          )
+          vim.keymap.set(
+            'n', 'R', '<Plug>(fern-action-reload:all)',
+            { remap = false, buffer = true }
           )
           vim.opt_local.number = false
           vim.opt_local.relativenumber = false
@@ -97,11 +110,11 @@ return {
         local b_k = b.__key[#b.__key]
         local a_score = scores[a_k] or 0
         local b_score = scores[b_k] or 0
-        if a_score == b_score then
-          return default_fern_compare(a, b)
-        else
-          return b_score - a_score > 0 and 1 or -1
-        end
+        local diff = b_score - a_score
+        return
+          (diff == 0 or a_k == nil or b_k == nil)
+            and default_fern_compare(a, b)
+            or  diff > 0 and 1 or -1
       end
 
       vim.g['fern#comparators'] = vim.tbl_extend('force', vim.g['fern#comparators'], {
