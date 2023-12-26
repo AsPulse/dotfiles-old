@@ -119,7 +119,7 @@
   </section>
   <section name="keymap">
     <key name="kana" value="`" />
-    <key name="convchar" value="\c`" />
+    <key name="convchar" value="\cq" />
     <key name="jlatin" value="" />
     <key name="ascii" value="" />
     <key name="jmode" value="" />
