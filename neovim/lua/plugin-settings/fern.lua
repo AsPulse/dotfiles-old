@@ -32,13 +32,6 @@ local function default_fern_compare(n1, n2)
   return vim.fn['fern#util#compare'](t1 == 0,t2 == 0)
 end
 
-local function get_keys(t)
-  local keys={}
-  for key,_ in pairs(t) do
-    table.insert(keys, key)
-  end
-  return keys
-end
 return {
   {
     'lambdalisue/fern.vim',
@@ -60,9 +53,6 @@ return {
       {
         'LumaKernel/fern-mapping-reload-all.vim'
       },
-      {
-        'lambdalisue/fern-comparator-lexical.vim'
-      }
     },
     init = function()
       vim.api.nvim_set_var('fern#renderer', 'nerdfont')
