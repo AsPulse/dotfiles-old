@@ -13,6 +13,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
 export BROWSER="/mnt/c/Users/aspulse/AppData/Local/Vivaldi/Application/vivaldi.exe"
+export GIT_EXTERNAL_DIFF="difft --display=inline --color=always"
 eval "$(starship init zsh)"
 
 

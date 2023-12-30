@@ -7,7 +7,7 @@ brew "cloudflared"
 brew "zsh"
 brew "gh"
 brew "wget"
-brew "lazygit"
+brew "lazygit", args: ["HEAD"]
 brew "neovim", args: ["HEAD"]
 brew "stow"
 brew "gnupg"

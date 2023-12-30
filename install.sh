@@ -22,6 +22,10 @@ mkdir -p ~/.config/nvim
 stow -R -v -d ./ -t ~/.config starship
 stow -R -v -d ./ -t ~/.config/nvim neovim
 
+mkdir -p ~/.config
+mkdir -p ~/.config/lazygit
+stow -R -v -d ./ -t ~/.config/lazygit lazygit
+
 mkdir -p ~/.vivaldi
 stow -R -v -d ./ -t ~/.vivaldi vivaldi
 

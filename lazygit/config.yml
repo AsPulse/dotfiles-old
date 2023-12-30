@@ -1,0 +1,6 @@
+gui:
+  mouseEvents: false
+  nerdFontsVersion: "3"
+git:
+  paging:
+    externalDiffCommand: "difft --display=inline --color=always"
