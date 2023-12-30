@@ -37,11 +37,21 @@ return {
   },
   {
     'lukas-reineke/indent-blankline.nvim',
+    enabled = false,
     event = { 'BufEnter *.*', 'VeryLazy' },
     dependencies = { 'marko-cerovac/material.nvim' },
     config = function ()
       require('ibl') .setup {
         -- chat_highlight_list = { 'NonText' }
+      }
+    end
+  },
+  {
+    'shellRaining/hlchunk.nvim',
+    event = { 'BufEnter *.*', 'VeryLazy' },
+    config = function()
+      require('hlchunk').setup {
+
       }
     end
   },
