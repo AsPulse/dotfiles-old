@@ -21,7 +21,8 @@ return {
     'FzfPreviewProjectGrepRpc',
   },
   init = function()
-    fzf_keymap('ff', 'DirectoryFilesRpc')
+    fzf_keymap('ff', 'GitFilesRpc')
+    fzf_keymap('fw', 'DirectoryFilesRpc')
     fzf_keymap('fb', 'BuffersRpc')
     fzf_keymap('fl', 'BufferLinesRpc')
     fzf_keymap('lg', 'NvimLspDefinitionRpc')

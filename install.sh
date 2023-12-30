@@ -2,7 +2,7 @@
 set -e
 
 sudo apt update
-sudo apt install gcc g++ make net-tools
+sudo apt install gcc g++ make net-tools gnuplot
 
 # Install Homebrew
 if ! command -v brew > /dev/null 2>&1 ; then
@@ -35,5 +35,10 @@ mkdir -p ~/git
 stow -R -v -d ./ -t ~/git git
 git config --global core.excludesfile ~/git/.gitignore_global
  
-volta install np live-server typescript typescript-language-server lehre turbo pnpm turbo aicommits aic
+volta install np live-server typescript typescript-language-server lehre pnpm turbo aicommits
 gh extension install seachicken/gh-poi
+
+cargo install --git https://github.com/AsPulse/cargo-docs.git --branch chore/add-cargo-feature --features vendored-libgit2
+cargo install cargo-update --features vendored-libgit2
+cargo install cargo-about ripgrep wsl-dirutils difftastic
+cargo install-update --all
