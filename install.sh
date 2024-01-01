@@ -44,5 +44,6 @@ gh extension install seachicken/gh-poi
 
 cargo install --git https://github.com/AsPulse/cargo-docs.git --branch chore/add-cargo-feature --features vendored-libgit2
 cargo install cargo-update --features vendored-libgit2
-cargo install cargo-about ripgrep wsl-dirutils difftastic
+cargo install eza --features vendored-libgit2
+cargo install cargo-about cargo-script ripgrep wsl-dirutils difftastic xcp fd-find bat
 cargo install-update --all
