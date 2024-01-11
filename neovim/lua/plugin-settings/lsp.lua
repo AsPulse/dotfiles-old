@@ -32,6 +32,7 @@ return {
           'jsonls',
           'yamlls',
           'pyright',
+          'csharp_ls',
           'rust_analyzer',
         },
         automatic_installation = true,

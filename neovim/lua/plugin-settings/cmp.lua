@@ -123,6 +123,17 @@ return {
       require('mason-lspconfig').setup_handlers({
         function(server_name)
           local setupfunc = lspconfig[server_name]
+          if server_name == 'csharp_ls' then
+            setupfunc.setup({
+              on_attach = on_attach,
+              settings = {
+                ["omniSharp"] = {
+                  useGlobalMono = "always",
+                }
+              }
+            })
+            return
+          end
           if server_name == 'tsserver' then
             setupfunc.setup({
               on_attach = function(client, bufnr)

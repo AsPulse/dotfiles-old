@@ -24,7 +24,6 @@ set('pumblend', 10)
 
 set('signcolumn', 'yes:1')
 
-vim.o.guifont = 'FiraCode Nerd Font Mono:h14'
 vim.g.mapleader = ' '
 
 return nil;

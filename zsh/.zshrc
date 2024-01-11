@@ -2,22 +2,26 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
+# Add an "alert" alias for long running commands.  Use like so: sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
+export HOMEBREW_NO_AUTO_UPDATE=true
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
+
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
+
 export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
 export BROWSER="/mnt/c/Users/aspulse/AppData/Local/Vivaldi/Application/vivaldi.exe"
 export GIT_EXTERNAL_DIFF="difft --display=inline --color=always"
 eval "$(starship init zsh)"
 
-
-ulimit -n 65535
 
 # export XDG_RUNTIME_DIR=/tmp/xdg
 # export WAYLAND_DISPLAY=wayland-0
@@ -52,7 +56,7 @@ function neovide() {
   local nvimserver=$!
   echo "Runnning nvim server using :$port, pid: $nvimserver..."
 
-  $neovide --multigrid --remote-tcp=localhost:$port
+  $neovide --remote-tcp=localhost:$port
 }
 
 function popi_before() {
@@ -72,7 +76,13 @@ function pwd() {
   ~/repos/wsl-dirutils/target/release/wsl-dirutils pwd > /dev/null
 }
 
+function less_with_unbuffer () {
+  unbuffer "$@" | less -SR
+}
 
 alias pn='popi_before neovide'
 alias pnvim='popi_before nvim'
 alias pcd='popi_before'
+alias ul='less_with_unbuffer'
+alias legit='git'
+alias ls='eza'

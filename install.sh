@@ -2,7 +2,7 @@
 set -e
 
 sudo apt update
-sudo apt install gcc g++ make net-tools gnuplot
+sudo apt install gcc g++ make net-tools gnuplot expect units
 
 # Install Homebrew
 if ! command -v brew > /dev/null 2>&1 ; then
@@ -12,7 +12,10 @@ if ! command -v brew > /dev/null 2>&1 ; then
   echo "Homebrew already installed."
 fi
 
-ulimit -n 65535
+# sudo su
+# ulimit -Hn 65535
+# ulimit -Sn 65535
+
 brew bundle || true
 curl https://get.volta.sh | bash
 curl -sSL https://install.python-poetry.org | python3 -

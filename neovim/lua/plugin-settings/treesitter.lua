@@ -22,7 +22,7 @@ return {
           'diff',
           'dockerfile',
           'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
-          'rust',
+          'rust', "c_sharp",
           'python',
           'html', 'json5', 'lua', 'markdown', 'markdown_inline', 'yaml', 'toml',
           'cpp',
