@@ -1,25 +1,6 @@
 #!/bin/sh
 set -e
 
-sudo apt update
-sudo apt install gcc g++ make net-tools gnuplot expect units
-
-# Install Homebrew
-if ! command -v brew > /dev/null 2>&1 ; then
-  echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
- else
-  echo "Homebrew already installed."
-fi
-
-# sudo su
-# ulimit -Hn 65535
-# ulimit -Sn 65535
-
-brew bundle || true
-curl https://get.volta.sh | bash
-curl -sSL https://install.python-poetry.org | python3 -
-
 mkdir -p ~/.config
 mkdir -p ~/.config/nvim
 stow -R -v -d ./ -t ~/.config starship
@@ -45,8 +26,8 @@ git config --global core.excludesfile ~/git/.gitignore_global
 volta install np live-server typescript typescript-language-server lehre pnpm turbo aicommits
 gh extension install seachicken/gh-poi
 
-cargo install --git https://github.com/AsPulse/cargo-docs.git --branch chore/add-cargo-feature --features vendored-libgit2
-cargo install cargo-update --features vendored-libgit2
-cargo install eza --features vendored-libgit2
-cargo install cargo-about cargo-script ripgrep wsl-dirutils difftastic xcp fd-find bat
+cargo install cargo-docs 
+cargo install cargo-update
+cargo install eza
+cargo install cargo-about cargo-script ripgrep difftastic xcp fd-find bat
 cargo install-update --all

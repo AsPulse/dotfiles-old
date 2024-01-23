@@ -7,8 +7,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 export HOMEBREW_NO_AUTO_UPDATE=true
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
@@ -18,7 +18,6 @@ export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 
 export REPODIR="$HOME/repos"
 export GPG_TTY=$TTY
-export BROWSER="/mnt/c/Users/aspulse/AppData/Local/Vivaldi/Application/vivaldi.exe"
 export GIT_EXTERNAL_DIFF="difft --display=inline --color=always"
 eval "$(starship init zsh)"
 
@@ -45,20 +44,6 @@ function find_first_free_port() {
   return 1
 }
 
-function neovide() {
-  local neovide="/mnt/c/Users/aspulse/Documents/repos/neovide/target/release/neovide.exe"
-  local port=$(find_first_free_port 7000 7100)
-  if [[ $port -eq -1 ]]; then
-    echo "No free port found for neovide. (:7000 - :7100)"
-    return 1
-  fi
-  nvim --headless --listen localhost:$port "$*" &
-  local nvimserver=$!
-  echo "Runnning nvim server using :$port, pid: $nvimserver..."
-
-  $neovide --remote-tcp=localhost:$port
-}
-
 function popi_before() {
   local popi_result=$(mktemp)
   ~/repos/popi/target/release/popi > "$popi_result"
@@ -69,11 +54,8 @@ function popi_before() {
   "$@"
 }
 
-function cd() {
-  builtin cd "$(~/repos/wsl-dirutils/target/release/wsl-dirutils convert "$*")"
-}
-function pwd() {
-  ~/repos/wsl-dirutils/target/release/wsl-dirutils pwd > /dev/null
+function neovide() {
+  ~/repos/neovide/target/release/neovide
 }
 
 function less_with_unbuffer () {
@@ -86,3 +68,4 @@ alias pcd='popi_before'
 alias ul='less_with_unbuffer'
 alias legit='git'
 alias ls='eza'
+alias cat='bat'

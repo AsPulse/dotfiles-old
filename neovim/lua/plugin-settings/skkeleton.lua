@@ -1,7 +1,7 @@
 return {
   {
     'vim-skk/skkeleton',
-    enabled = true,
+    enabled = false,
     event = { 'InsertEnter', 'CmdlineEnter' },
     cmd = { 'Telescope' },
     dependencies = { 'vim-denops/denops.vim', 'rcarriga/nvim-notify', 'yuki-yano/denops-lazy.nvim' },
