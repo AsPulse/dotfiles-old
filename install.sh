@@ -1,14 +1,15 @@
 #!/bin/sh
 set -e
 
-mkdir -p ~/.config
 mkdir -p ~/.config/nvim
 stow -R -v -d ./ -t ~/.config starship
 stow -R -v -d ./ -t ~/.config/nvim neovim
 
-mkdir -p ~/.config
 mkdir -p ~/.config/lazygit
 stow -R -v -d ./ -t ~/.config/lazygit lazygit
+
+mkdir -p ~/.config/hypr
+stow -R -v -d ./ -t ~/.config/hypr hypr
 
 mkdir -p ~/.vivaldi
 stow -R -v -d ./ -t ~/.vivaldi vivaldi
@@ -22,7 +23,7 @@ stow -R -v zsh -t ~/
 mkdir -p ~/git
 stow -R -v -d ./ -t ~/git git
 git config --global core.excludesfile ~/git/.gitignore_global
- 
+
 volta install np live-server typescript typescript-language-server lehre pnpm turbo aicommits
 gh extension install seachicken/gh-poi
 
