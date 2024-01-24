@@ -24,6 +24,7 @@ return {
           'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
           'rust', "c_sharp",
           'python',
+          'gdscript', 'godot_resource',
           'html', 'json5', 'lua', 'markdown', 'markdown_inline', 'yaml', 'toml',
           'cpp',
         },
