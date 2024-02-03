@@ -27,8 +27,7 @@ git config --global core.excludesfile ~/git/.gitignore_global
 volta install np live-server typescript typescript-language-server lehre pnpm turbo aicommits
 gh extension install seachicken/gh-poi
 
-cargo install cargo-docs 
-cargo install cargo-update
-cargo install eza
-cargo install cargo-about cargo-script ripgrep difftastic xcp fd-find bat
+cargo install cargo-docs cargo-update cargo-about cargo-script cargo-insta cargo-expand cross
+cargo install eza xcp fd-find bat du-dust
+cargo install ripgrep difftastic tokio-console
 cargo install-update --all
